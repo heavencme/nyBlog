@@ -1,0 +1,14 @@
+[Unit]
+Description=Ghost systemd service for blog: localhost
+Documentation=https://docs.ghost.org
+
+[Service]
+Type=simple
+WorkingDirectory=/web/timemeetOnGhost
+User=999
+Environment="NODE_ENV=production"
+ExecStart=/usr/local/bin/node /usr/local/bin/ghost run
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
